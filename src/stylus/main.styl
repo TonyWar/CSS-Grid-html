@@ -3,8 +3,6 @@
 @require 'vars'
 @require 'base'
 
-@require './elements/header'
-
 body 
     opacity: 1
     overflow-x: hidden
@@ -15,10 +13,9 @@ html
 .grid
     display: grid
 
-.portfolio-section
-    .portfolio-item
-        for num in 1 2 3 4 5 6 7 8 9
-            &:nth-child({num})
-                background-image: url(../img/num.jpg)
+@require './elements/header'
+@require './elements/portfolio'
+
+
 
 @require 'media'
