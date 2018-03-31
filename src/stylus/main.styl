@@ -6,6 +6,7 @@
 body 
     opacity: 1
     overflow-x: hidden
+    color: #333
 
 html 
     background-color: #fff
@@ -16,6 +17,116 @@ html
 @require './elements/header'
 @require './elements/portfolio'
 
+.container
+    max-width 1200px
+    margin: auto
+    padding: 0 gutter
 
+.landing-section
+    padding: 80px 0
+    h2
+        font-size 34px
+        font-weight 800
+        color: color_dark
+        line-height 1.2
+
+.section-ready
+    background-color color_light
+    .container
+        grid-template-columns: repeat(2, 1fr)
+
+.ready-left
+    border-right: 1px solid #dadada
+    font-size 18px
+    padding: 60px 60px 60px 0px
+    h2
+        margin-top 0
+        margin-bottom 40px
+
+.ready-right
+    padding-left 40px
+
+//////////////////////////////////////////////////////
+
+.form-section
+    padding: 30px 0
+    background-color color_dark
+    input
+        background-color lighten(color_dark, 6%)
+    form
+        grid-gap: gutter 
+        grid-template-columns: repeat(4, 1fr)
+    .button
+        font-size: 17px
+        font-weight 800
+        padding: 14.5px
+        width 100%
+
+input, textarea
+    border none 
+    padding: 15px 20px
+    width 100%
+    font-family Arial, Helvetica, sans-serif
+    font-style italic
+    outline: none
+    transition: background-color .25s ease 
+    &:focus
+        background-color color_light
+    &::placeholder
+        color: lighten(color_dark, 20%)
+///////////////////////////////////////
+
+.section-blog
+    h2
+        margin-top: 0
+        margin-bottom: 50px
+    .buttoncase
+        padding-bottom: 0
+
+.blog-home
+    grid-gap: gutter 
+    grid-template-columns: repeat(4, 1fr)
+    
+.blog-item
+    background-color #f7f7f7
+    text-decoration none
+    grid-template-rows: repeat(2, 1fr)
+    transition: background-color .25s ease 
+    overflow hidden
+    color: #333
+    &:nth-child(3)
+        grid-column: 3 / 5
+    &:nth-child(4)
+        grid-column: 1 / 3
+    &:hover
+        background-color color_light
+        h4
+            color: color_dark 
+        .blog-item-img
+            transform: scale(1.05) translateY(-6.5px)
+    &-img
+        height 270px
+        background-size cover
+        background-position center
+        transition: transform .25s ease 
+    &-content
+        padding: 25px
+        text-align center
+        align-content: center
+        h4
+            font-size 18px
+            color: #666666
+            line-height 1.3
+            margin 0
+            transition: color .25s ease 
+        p
+            margin-top: 20px
+            margin-bottom: 0
+
+
+    for num in 1 2 3 4 5 6
+            &:nth-child({num})
+                .blog-item-img
+                    background-image: url(../img/num.jpg)
 
 @require 'media'
